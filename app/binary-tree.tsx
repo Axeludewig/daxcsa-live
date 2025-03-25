@@ -324,20 +324,20 @@ export default function PerfectBinaryTree({
 				<button
 					onClick={handleZoomOut}
 					disabled={zoom <= minZoom}
-					className="px-4 py-1 border rounded-sm bg-white text-black"
+					className="px-4 py-1 border rounded-sm bg-white text-black cursor-pointer hover:scale-105"
 				>
 					-
 				</button>
 				<button
 					onClick={handleZoomReset}
-					className="px-4 py-1 border rounded-sm bg-white text-black"
+					className="px-4 py-1 border rounded-sm bg-white text-black cursor-pointer hover:scale-105"
 				>
 					Reset
 				</button>
 				<button
 					onClick={handleZoomIn}
 					disabled={zoom >= maxZoom}
-					className="px-4 py-1 border rounded-sm bg-white text-black"
+					className="px-4 py-1 border rounded-sm bg-white text-black cursor-pointer hover:scale-105"
 				>
 					+
 				</button>

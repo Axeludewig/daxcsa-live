@@ -51,7 +51,7 @@ export default function Home() {
 						<button
 							onClick={handleNavigateUp}
 							disabled={!rootNode.parent}
-							className="px-4 py-2 bg-blue-600 text-white rounded-md disabled:opacity-50 disabled:bg-blue-300"
+							className="px-4 py-2 bg-blue-600 text-white rounded-md disabled:opacity-50 disabled:bg-blue-300 cursor-pointer hover:scale-105"
 						>
 							Navigate Up
 						</button>
