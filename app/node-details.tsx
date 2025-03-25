@@ -41,14 +41,14 @@ export default function NodeDetails({ node, onSetAsRoot }: NodeDetailsProps) {
 					<h3 className="text-sm font-medium text-gray-700">
 						Product
 					</h3>
-					<p>{node.product}</p>
+					<p>{node.product ?? "N/A"}</p>
 				</div>
 
 				<div>
 					<h3 className="text-sm font-medium text-gray-700">
 						Category
 					</h3>
-					<p>{node.category}</p>
+					<p>{node.category ?? "N/A"}</p>
 				</div>
 
 				<div>
