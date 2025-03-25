@@ -214,16 +214,23 @@ function layoutTree(
 	return positions;
 }
 
-function getBoundingBox(all: { x: number; y: number }[]) {
+function getBoundingBox(
+	all: { x: number; y: number }[],
+	nodeWidth: number,
+	nodeHeight: number
+) {
 	let minX = Infinity,
 		maxX = -Infinity,
 		minY = Infinity,
 		maxY = -Infinity;
 	for (const p of all) {
+		// p.x and p.y are the top-left corner of the node
+		const rightEdge = p.x + nodeWidth;
+		const bottomEdge = p.y + nodeHeight;
 		if (p.x < minX) minX = p.x;
-		if (p.x > maxX) maxX = p.x;
+		if (rightEdge > maxX) maxX = rightEdge;
 		if (p.y < minY) minY = p.y;
-		if (p.y > maxY) maxY = p.y;
+		if (bottomEdge > maxY) maxY = bottomEdge;
 	}
 	return { minX, maxX, minY, maxY };
 }
@@ -289,8 +296,8 @@ export default function PerfectBinaryTree({
 		if (!positions.length) {
 			return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
 		}
-		return getBoundingBox(positions);
-	}, [positions]);
+		return getBoundingBox(positions, nodeWidth, nodeHeight);
+	}, [positions, nodeWidth, nodeHeight]);
 
 	// padding
 	const pad = 50;
